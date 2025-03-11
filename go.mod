@@ -1,3 +1,4 @@
-module github.com/lgl8023/go-openai
+module github.com/profile723/go-openai
 
-go 1.18
+go 1.22.0
+

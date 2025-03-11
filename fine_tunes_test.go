@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/lgl8023/go-openai"
-	"github.com/lgl8023/go-openai/internal/test/checks"
+	"github.com/profile723/go-openai"
+	"github.com/profile723/go-openai/internal/test/checks"
 )
 
 const testFineTuneID = "fine-tune-id"

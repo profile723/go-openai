@@ -3,7 +3,7 @@ package openai_test
 import (
 	"testing"
 
-	"github.com/lgl8023/go-openai"
+	"github.com/profile723/go-openai"
 )
 
 func TestGetAzureDeploymentByModel(t *testing.T) {
