@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/profile723/go-openai"
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 )
 
 func TestChatCompletionsStreamWrongModel(t *testing.T) {
@@ -956,6 +956,56 @@ func TestCreateChatCompletionStreamReasoningValidatorFails(t *testing.T) {
 
 	if !errors.Is(err, openai.ErrReasoningModelMaxTokensDeprecated) {
 		t.Errorf("Expected ErrReasoningModelMaxTokensDeprecated, got: %v", err)
+	}
+}
+
+func TestCreateChatCompletionStreamO3ReasoningValidatorFails(t *testing.T) {
+	client, _, _ := setupOpenAITestServer()
+
+	stream, err := client.CreateChatCompletionStream(context.Background(), openai.ChatCompletionRequest{
+		MaxTokens: 100, // This will trigger the validator to fail
+		Model:     openai.O3,
+		Messages: []openai.ChatCompletionMessage{
+			{
+				Role:    openai.ChatMessageRoleUser,
+				Content: "Hello!",
+			},
+		},
+		Stream: true,
+	})
+
+	if stream != nil {
+		t.Error("Expected nil stream when validation fails")
+		stream.Close()
+	}
+
+	if !errors.Is(err, openai.ErrReasoningModelMaxTokensDeprecated) {
+		t.Errorf("Expected ErrReasoningModelMaxTokensDeprecated for O3, got: %v", err)
+	}
+}
+
+func TestCreateChatCompletionStreamO4MiniReasoningValidatorFails(t *testing.T) {
+	client, _, _ := setupOpenAITestServer()
+
+	stream, err := client.CreateChatCompletionStream(context.Background(), openai.ChatCompletionRequest{
+		MaxTokens: 100, // This will trigger the validator to fail
+		Model:     openai.O4Mini,
+		Messages: []openai.ChatCompletionMessage{
+			{
+				Role:    openai.ChatMessageRoleUser,
+				Content: "Hello!",
+			},
+		},
+		Stream: true,
+	})
+
+	if stream != nil {
+		t.Error("Expected nil stream when validation fails")
+		stream.Close()
+	}
+
+	if !errors.Is(err, openai.ErrReasoningModelMaxTokensDeprecated) {
+		t.Errorf("Expected ErrReasoningModelMaxTokensDeprecated for O4Mini, got: %v", err)
 	}
 }
 

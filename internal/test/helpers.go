@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 
 	"net/http"
 	"os"

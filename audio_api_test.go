@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/profile723/go-openai"
-	"github.com/profile723/go-openai/internal/test"
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 )
 
 // TestAudio Tests the transcription and translation endpoints of the API using the mocked server.

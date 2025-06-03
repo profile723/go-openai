@@ -1,2 +1,2 @@
-github.com/lgl8023/go-openai v1.1.18 h1:uoP0HaUA/QqYw8AkeuqSFjdfPGeyi8GRNRtgrhiEpbo=
-github.com/lgl8023/go-openai v1.1.18/go.mod h1:oFGI6y9LdqR7Rng1XRz0chZ9WX/HY96j/ZkWErOIyp8=
+gitlab.forensix.cn/ai/service/go-openai v1.40.1 h1:bJ08Iwct5mHBVkuvG6FEcb9MDTfsXdTYPGjYLRdeTEU=
+gitlab.forensix.cn/ai/service/go-openai v1.40.1/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=

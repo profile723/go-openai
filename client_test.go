@@ -10,8 +10,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/profile723/go-openai/internal/test"
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 )
 
 var errTestRequestBuilderFailed = errors.New("test request builder failed")

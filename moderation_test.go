@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/profile723/go-openai"
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 )
 
 // TestModeration Tests the moderations endpoint of the API using the mocked server.

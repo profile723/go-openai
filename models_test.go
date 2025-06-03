@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/profile723/go-openai"
-	"github.com/profile723/go-openai/internal/test/checks"
+	"gitlab.forensix.cn/ai/service/go-openai"
+	"gitlab.forensix.cn/ai/service/go-openai/internal/test/checks"
 )
 
 const testFineTuneModelID = "fine-tune-model-id"
@@ -45,6 +45,24 @@ func TestGetModel(t *testing.T) {
 	server.RegisterHandler("/v1/models/text-davinci-003", handleGetModelEndpoint)
 	_, err := client.GetModel(context.Background(), "text-davinci-003")
 	checks.NoError(t, err, "GetModel error")
+}
+
+// TestGetModelO3 Tests the retrieve O3 model endpoint of the API using the mocked server.
+func TestGetModelO3(t *testing.T) {
+	client, server, teardown := setupOpenAITestServer()
+	defer teardown()
+	server.RegisterHandler("/v1/models/o3", handleGetModelEndpoint)
+	_, err := client.GetModel(context.Background(), "o3")
+	checks.NoError(t, err, "GetModel error for O3")
+}
+
+// TestGetModelO4Mini Tests the retrieve O4Mini model endpoint of the API using the mocked server.
+func TestGetModelO4Mini(t *testing.T) {
+	client, server, teardown := setupOpenAITestServer()
+	defer teardown()
+	server.RegisterHandler("/v1/models/o4-mini", handleGetModelEndpoint)
+	_, err := client.GetModel(context.Background(), "o4-mini")
+	checks.NoError(t, err, "GetModel error for O4Mini")
 }
 
 func TestAzureGetModel(t *testing.T) {

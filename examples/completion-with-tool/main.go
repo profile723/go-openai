@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/profile723/go-openai"
-	"github.com/profile723/go-openai/jsonschema"
+	"gitlab.forensix.cn/ai/service/go-openai"
+	"gitlab.forensix.cn/ai/service/go-openai/jsonschema"
 )
 
 func main() {
